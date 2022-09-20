@@ -3,6 +3,7 @@ import "./about.css"
 export default function About({ redirect }) {
     return (
         <div className="aboutContainer">
+            {/* to redirect to home */}
             <div className="backContainer" onClick={redirect}>
                 <BiArrowBack /> <span>Back</span>
             </div>

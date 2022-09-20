@@ -5,10 +5,14 @@ import HeadAndTail from "./components/HeadAndTail/HeadAndTail"
 import { useNavigate } from "react-router-dom"
 
 export default function RoutesComponent() {
-    let history = useNavigate()
+
+    let history = useNavigate();
+
+    // fn to redirect
     const redirect = () => {
         history("/")
     }
+    
     return (
         <Routes>
             <Route path="/" exact element={<Home />} />

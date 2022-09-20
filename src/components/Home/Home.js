@@ -5,6 +5,7 @@ import "./home.css"
 export default function Home() {
     return (
         <div className="homeContainer">
+            {/*  to about page */}
             <div className="homeLink">
                 <Link to="/about">
                     <FaLightbulb />
@@ -14,6 +15,7 @@ export default function Home() {
                 </div>
             </div>
 
+            {/*  to head tail page */}
             <div className="homeLink">
                 <Link to="/headtail">
                     <FaExternalLinkSquareAlt />

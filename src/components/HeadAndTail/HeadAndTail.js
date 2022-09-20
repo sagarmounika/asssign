@@ -15,16 +15,20 @@ export default function HeadAndTail({ redirect }) {
     const handleChange = value => {
         setSelected(value)
     }
+    // Output would be something like [[H,H,H],[T,T],[H,H]]
     const submit = () => {
+        // if no value is selected
         if (selected === "default") {
             setError(true)
         } else {
+            // if user just started adding
             if (array.length === 0) {
                 setArray(prev => [...prev, [selected]])
             } else {
+                // getting last element and checking if its same as selected value
                 let lastEl = array[array.length - 1]
                 let lastVal = lastEl[lastEl.length - 1]
-                // when last value is same as current value pushing to last row array
+                // when last value is same as selected value pushing to last row array
                 if (lastVal === selected) {
                     setArray(prev => {
                         return [
@@ -38,6 +42,7 @@ export default function HeadAndTail({ redirect }) {
                     setArray(prev => [...prev, [selected]])
                 }
             }
+            //removing error
             if (error) setError(false)
             // setting to default value
             setSelected(options[0].value)
@@ -46,6 +51,7 @@ export default function HeadAndTail({ redirect }) {
 
     return (
         <div className="headTailContainer">
+            {/* to redirect to home */}
             <div className="backContainer" onClick={redirect}>
                 <BiArrowBack /> <span>Back</span>
             </div>
@@ -63,6 +69,7 @@ export default function HeadAndTail({ redirect }) {
                     Submit
                 </button>
             </div>
+            {/* display of values */}
             {array.length !== 0 &&
                 <div className="displayContainer">
                     {array.map(val => (
